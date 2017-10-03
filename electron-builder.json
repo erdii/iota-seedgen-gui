@@ -1,0 +1,14 @@
+{
+    "appId": "com.electron.iota-seedgen",
+    "productName": "IOTA Seed Generator",
+    "asar": true,
+    "files": [
+        "build/**/*"
+    ],
+    "extraResources": [
+        "bin/*${os}*"
+    ],
+    "linux": {
+        "target": "tar.gz"
+    }
+}

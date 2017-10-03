@@ -1,0 +1,31 @@
+{
+  "name": "iota-seedgen-gui",
+  "version": "1.0.0",
+  "description": "Easy to use iota seed-generator app.",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "NODE_ENV=development electron .",
+    "pack": "electron-builder --dir",
+    "dist-linux": "electron-builder --linux",
+    "dist-mac": "electron-builder --mac",
+    "dist-win": "electron-builder --win"
+  },
+  "keywords": [],
+  "author": "erdii <erdiicodes@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^8.0.31",
+    "@types/react": "^16.0.7",
+    "@types/react-dom": "^15.5.5",
+    "electron-builder": "^19.33.0",
+    "electron-prebuilt": "^1.4.13",
+    "less": "^2.7.2",
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "mobx": "^3.3.0",
+    "mobx-react": "^4.3.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}

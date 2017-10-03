@@ -1,0 +1,131 @@
+@colorBase: #028b7e;
+@colorMainBG: @colorBase + 30%;
+
+@colorButton: #3b2b70;
+@colorButtonHover: @colorButton - 30%;
+
+body {
+    font-family: arial;
+    overflow: hidden;
+    margin: 0;
+}
+
+#root {
+    background: @colorBase;
+    color: white;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    -webkit-app-region: drag;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button,
+textarea {
+	-webkit-app-region: no-drag;
+}
+
+
+#app {
+    margin: 0;
+    background: @colorMainBG;
+
+    height: 100%;
+    width: 600px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#heading {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    user-select: none;
+    cursor: default;
+}
+
+#seed {
+    flex: 2;
+    outline: none;
+    resize: none;
+    overflow: hidden;
+    font-size: 2em;
+    color: white;
+    background: @colorMainBG;
+
+    width: 90%;
+    padding: 10px;
+
+    cursor: copy;
+
+    // make selection invisible
+    &::selection {
+        background: @colorMainBG + 20%;
+    }
+}
+
+.spacer {
+    flex: 1;
+}
+
+
+.button {
+    flex: 1;
+    width: 100%;
+    outline: none;
+    display: block;
+    padding: 40px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    background: @colorButton;
+
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: @colorButtonHover;
+    }
+}
+
+#close {
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        font-size: 24px;
+
+        outline: none;
+        display: block;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+
+        color: #fff;
+        background: @colorButton;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background: @colorButtonHover;
+        }
+    }
+}

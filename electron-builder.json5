@@ -1,0 +1,40 @@
+{
+    appId: "com.electron.iota-seedgen",
+    productName: "IOTA Seed Generator",
+    asar: true,
+    files: [
+        "build/**/*"
+    ],
+    extraResources: [
+        "bin/*${os}*"
+    ],
+
+    // linux stuff
+    linux: {
+        target: "AppImage", // what about appx?
+        // icon: "build/icon.ico" // path to app icon
+        // TODO: configure signing
+    },
+    appImage: {
+        systemIntegration: "ask",
+        synopsis: "Wallet seed generator for the cryptocurrency IOTA",
+        category: "Finance",
+    },
+
+    // windows stuff
+    win: {
+        target: "nsis",
+
+        // TODO: configure signing
+    },
+
+    // mac stuff
+
+    mac: {
+        target: "dmg",
+        category: "public.app-category.finance",
+        // icon: "icon.icns", // path to app icon
+
+        // TODO: configure signing
+    },
+}

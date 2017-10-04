@@ -1,6 +1,6 @@
 # Iota Seedgen Gui
 
-the friendly cross-platform (Mac, Windows, Linux for now) seed generator!
+the friendly cross-platform (Mac, Windows, Linux for now) seed generator (based on [iota-seedgen](https://github.com/erdii/iota-seedgen)!
 
 <p align="center">
     <img src="https://blog.werise.de/files/iota-seedgen-gui/screenshot.png" alt="example screenshot" />

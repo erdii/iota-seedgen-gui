@@ -9,6 +9,10 @@ build: | node_modules shared
 watch: shared
 	node_modules/.bin/tsc -w
 
+.PHONY: start
+start:
+	npm start
+
 .PHONY: clean
 clean:
 	rm -rf build || true

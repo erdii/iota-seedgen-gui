@@ -24,9 +24,7 @@ function getOsArchTuple() {
 }
 
 function getExecutablePath() {
-    const isDevelopment = process.env.NODE_ENV === "development";
-
-    if (isDevelopment) {
+    if (isDevelopment()) {
         return resolve(process.cwd(), "bin", `iota-seedgen_${getOsArchTuple()}`);
     } else {
         return resolve((process as any).resourcesPath, "bin", `iota-seedgen_${getOsArchTuple()}`);
@@ -54,4 +52,8 @@ export function sleep(millis) {
 
 export function isOSX() {
     return platform() == "darwin";
+}
+
+export function isDevelopment(): boolean {
+    return process.env.NODE_ENV === "development";
 }

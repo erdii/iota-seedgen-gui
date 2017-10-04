@@ -1,4 +1,4 @@
-import { exec } from "child_process";
+import { execFile } from "child_process";
 import { arch, platform } from "os";
 import { resolve } from "path";
 
@@ -20,26 +20,22 @@ function getOsArchTuple() {
         }
     })();
 
-    return `${os}-${bits}`;
+    return `${os}-${bits}${platform() === "win32" ? ".exe" : ""}`;
 }
 
 function getExecutablePath() {
     const isDevelopment = process.env.NODE_ENV === "development";
 
     if (isDevelopment) {
-        return resolve(process.cwd(), "bin", `iota-seedgen_${getOsArchTuple()} -s`);
+        return resolve(process.cwd(), "bin", `iota-seedgen_${getOsArchTuple()}`);
     } else {
-        if (platform() === "darwin") {
-            return resolve(process.cwd(), "Content", "resources", "bin", `iota-seedgen_${getOsArchTuple()} -s`);
-        } else {
-            return resolve(process.cwd(), "resources", "bin", `iota-seedgen_${getOsArchTuple()} -s`);
-        }
+        return resolve((process as any).resourcesPath, "bin", `iota-seedgen_${getOsArchTuple()}`);
     }
 }
 
 export function generateSeed() {
     return new Promise<string>((resolve, reject) => {
-        exec(getExecutablePath(), (err, stdout, stderr) => {
+        execFile(getExecutablePath(), ["-s"], (err, stdout, stderr) => {
             if (err) {
                 reject(err.message || stderr);
                 return;

@@ -7,7 +7,7 @@ the friendly cross-platform (Mac, Windows, Linux for now) seed generator!
 </p>
 
 ### Installation
-* TODO
+* [download](https://github.com/erdii/iota-seedgen-gui/releases/latest) and doubleclick. That's it :)
 
 ### Development
 * build typescript, less and html: `make build`

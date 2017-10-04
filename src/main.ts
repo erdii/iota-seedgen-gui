@@ -7,7 +7,7 @@ import * as url from "url"
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({
     width: 600,
@@ -25,7 +25,9 @@ function createWindow () {
 
   mainWindow.once("ready-to-show", () => {
     mainWindow.show();
-    mainWindow.webContents.openDevTools()    
+
+    // Uncomment to automatically open the devtools
+    // mainWindow.webContents.openDevTools()    
   });
 
   // and load the index.html of the app.
@@ -34,9 +36,6 @@ function createWindow () {
     protocol: "file:",
     slashes: true
   }))
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   mainWindow.on("closed", function () {
@@ -64,6 +63,3 @@ app.on("window-all-closed", function () {
 //     createWindow()
 //   }
 // })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
